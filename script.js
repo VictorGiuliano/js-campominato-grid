@@ -10,15 +10,27 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
  const rows = 10;
  const total = col * rows;
 
- //Creazione delle celle
+
+
+function createCell(){
+    let cell;
+    cell = document.createElement("div");
+    cell.classList.add('cell');
+    return cell;
+}
+
+//Creazione delle celle
 button.addEventListener('click',function(){
-    let cell = ` `;
-        for(let i=0;i<total;i++){
-        cell = document.createElement("div");
-        cell.classList.add('cell');
+    for(let i=0;i<total;i++){
+        const cell = createCell();
+        //Aggiunto la possibilità di cambiare colore alle caselle
+        cell.addEventListener('click', function(){
+            cell.classList.add('clicked');
+        });
         zone.appendChild(cell);
-        }
- cell.innerHtml = "div";
+    }
 });
- 
+
+  
+
  

@@ -1,6 +1,5 @@
 main{
     background-color: rgb(127,255,212);
-    min-height: 600px;
     padding:8% 17% 0;
 }
 #grid{
@@ -19,6 +18,6 @@ main{
     align-items: center;
     display: flex;
 }
-#grd .cell .clicked{
+#grid .cell.clicked{
     background-color: aqua;
 }
