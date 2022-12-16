@@ -12,9 +12,10 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 
 
-function createCell(){
+function createCell(x){
     let cell;
     cell = document.createElement("div");
+    cell.append(x);
     cell.classList.add('cell');
     return cell;
 }
@@ -22,7 +23,7 @@ function createCell(){
 //Creazione delle celle
 button.addEventListener('click',function(){
     for(let i=0;i<total;i++){
-        const cell = createCell();
+        const cell = createCell(i + 1);
         //Aggiunto la possibilità di cambiare colore alle caselle
         cell.addEventListener('click', function(){
             cell.classList.add('clicked');
