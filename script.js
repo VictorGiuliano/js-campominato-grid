@@ -5,17 +5,20 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
  con il numero della cella cliccata.*/
 
  const zone = document.getElementById('grid');
-
+ const button = document.getElementById('button');
  const col = 10;
  const rows = 10;
  const total = col * rows;
 
  //Creazione delle celle
- let cell = ` `;
- for(let i=0;i<total;i++){
-    cell = document.createElement("div");
-    cell.classList.add('cell');
-    zone.appendChild(cell);
- }
+button.addEventListener('click',function(){
+    let cell = ` `;
+        for(let i=0;i<total;i++){
+        cell = document.createElement("div");
+        cell.classList.add('cell');
+        zone.appendChild(cell);
+        }
  cell.innerHtml = "div";
+});
+ 
  
