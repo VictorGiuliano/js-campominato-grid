@@ -22,11 +22,12 @@ function createCell(x){
 
 //Creazione delle celle
 button.addEventListener('click',function(){
-    for(let i=0;i<total;i++){
-        const cell = createCell(i + 1);
+    for(let i=1;i<=total;i++){
+        const cell = createCell(i);
         //Aggiunto la possibilità di cambiare colore alle caselle
         cell.addEventListener('click', function(){
             cell.classList.add('clicked');
+            console.log(i);
         });
         zone.appendChild(cell);
     }
