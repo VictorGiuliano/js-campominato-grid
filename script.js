@@ -9,7 +9,23 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
  const col = 10;
  const rows = 10;
  const total = col * rows;
+ let isOnly = false;
 
+function play(){
+    button.innerHTML = 'Ricomincia';
+    zone.innerHTML = '';
+for(let i=1;i<=total;i++){
+        const cell = createCell(i);
+        //Aggiunto la possibilità di cambiare colore alle caselle
+        cell.addEventListener('click', function(){
+            cell.classList.add('clicked');
+            console.log(i);
+        });
+        zone.appendChild(cell);
+    }
+
+
+}
 
 
 function createCell(x){
@@ -20,18 +36,12 @@ function createCell(x){
     return cell;
 }
 
+
 //Creazione delle celle
-button.addEventListener('click',function(){
-    for(let i=1;i<=total;i++){
-        const cell = createCell(i);
-        //Aggiunto la possibilità di cambiare colore alle caselle
-        cell.addEventListener('click', function(){
-            cell.classList.add('clicked');
-            console.log(i);
-        });
-        zone.appendChild(cell);
-    }
-});
+
+   button.addEventListener('click', play); 
+
+
 
   
 
